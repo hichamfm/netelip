@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Log;
 
 class HomeController extends Controller
 {
@@ -54,5 +55,11 @@ class HomeController extends Controller
 		$http_code = curl_getinfo( $ch, CURLINFO_HTTP_CODE ); 
 		curl_close($ch);
 		echo $result_curl;
+	}
+	
+	public function recepcion(Request $request){
+		$data=$request->all();
+		Log::info($_REQUEST);
+		Log::info($data);
 	}
 }

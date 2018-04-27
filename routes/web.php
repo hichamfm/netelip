@@ -24,6 +24,10 @@ Route::post('/llamada', [
         'uses'=>'HomeController@enviar',
         'as'=>'netelip.enviar'
     ]);
+Route::any('/recepcion', [
+        'uses'=>'HomeController@recepcion',
+        'as'=>'netelip.recepcion'
+    ]);	
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
