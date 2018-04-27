@@ -68,4 +68,8 @@ class HomeController extends Controller
 		Log::info($_REQUEST);
 		//Log::info($data);
 	}
+	
+	public function reporteLlamadas(Request $request){
+		Log::info($_REQUEST);
+	}
 }

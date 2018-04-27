@@ -31,6 +31,10 @@ Route::post('/llamadasSalientes', [
 Route::post('/llamadasEntrantes', [
         'uses'=>'HomeController@llamadasEntrantes',
         'as'=>'netelip.llamadasEntrantes'
+    ]);
+Route::post('/reporteLlamadas', [
+        'uses'=>'HomeController@reporteLlamadas',
+        'as'=>'netelip.reporteLlamadas'
     ]);	
 	
 Auth::routes();
