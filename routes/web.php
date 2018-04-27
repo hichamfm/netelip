@@ -24,9 +24,13 @@ Route::post('/llamada', [
         'uses'=>'HomeController@enviar',
         'as'=>'netelip.enviar'
     ]);
-Route::any('/recepcion', [
-        'uses'=>'HomeController@recepcion',
-        'as'=>'netelip.recepcion'
+Route::any('/llamdasSalientes', [
+        'uses'=>'HomeController@llamadasSalientes',
+        'as'=>'netelip.llamadasSalientes'
+    ]);	
+Route::any('/llamadasEntrantes', [
+        'uses'=>'HomeController@llamadasEntrantes',
+        'as'=>'netelip.llamadasEntrantes'
     ]);	
 Auth::routes();
 

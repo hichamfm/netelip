@@ -57,9 +57,15 @@ class HomeController extends Controller
 		echo $result_curl;
 	}
 	
-	public function recepcion(Request $request){
-		$data=$request->all();
+	public function llamadasSalientes(Request $request){
+		//$data=$request->all();
 		Log::info($_REQUEST);
-		Log::info($data);
+		//Log::info($data);
+	}
+	
+	public function llamadasEntrantes(Request $request){
+		//$data=$request->all();
+		Log::info($_REQUEST);
+		//Log::info($data);
 	}
 }
