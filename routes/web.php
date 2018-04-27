@@ -32,6 +32,6 @@ Route::any('/llamadasEntrantes', [
         'uses'=>'HomeController@llamadasEntrantes',
         'as'=>'netelip.llamadasEntrantes'
     ]);	
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
