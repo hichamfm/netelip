@@ -26,7 +26,7 @@
 	<div class="form-group col-md-4 {{ $errors->has('message') ? 'has-error' : '' }}">
 		<label for="message" class="control-label">Número de teléfono a llamar</label>
 		<div class="col-md-10">
-			<input class="form-control input-sm " name="dst" type="text" id="dst" value="527221569361" min="1" max="255" required="true" >
+			<input class="form-control input-sm " name="dst" type="text" id="dst" value="00527221569361" min="1" max="255" required="true" >
 			{!! $errors->first('message', '<p class="help-block">:message</p>') !!}
 		</div>
 	</div>

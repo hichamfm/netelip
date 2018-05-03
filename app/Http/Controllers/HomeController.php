@@ -58,9 +58,34 @@ class HomeController extends Controller
 	}
 	
 	public function llamadasSalientes(Request $request){
-		//$data=$request->all();
-		Log::info($_REQUEST);
-		//Log::info($data);
+		//Log::info($_REQUEST);
+		$data=$request->get('call');
+		log("inicio");
+		log($data);
+		log("fin");
+		
+		if ($_POST["userfield"]==""){
+			$userfield="0";
+		}
+		else{
+			$userfield=$_POST["userfield"];
+		}
+		
+		switch($userfield){
+			case "0":
+				$comando="dial";
+				$option="extension,100,30,called,20";
+				$userfield="3";
+				break;
+			case "3":
+				$comando="hangup";
+				$option="";
+				$userfield="";
+				break;
+		}
+		$cadena=array("command"=>$comando,"options"=>$option,"userfield"=>$userfield);
+		echo json_encode($cadena);
+		
 	}
 	
 	public function llamadasEntrantes(Request $request){
@@ -73,3 +98,43 @@ class HomeController extends Controller
 		Log::info($_REQUEST);
 	}
 }
+/*
+[2018-05-02 19:57:55] local.INFO: array (
+  'ID' => '1525291061.0506',
+  'src' => 'anonymous',
+  'dst' => '005217221569361',
+  'api' => 'API 6230f',
+  'startcall' => '2018-05-02 21:57:41',
+  'userdata' => '',
+)  
+[2018-05-02 19:57:56] local.INFO: array (
+  'ID' => '1525291061.0506',
+  'src' => 'anonymous',
+  'dst' => '005217221569361',
+  'api' => 'API 6230f',
+  'userfield' => '',
+  'command' => '',
+  'options' => '',
+  'description' => 'Command not found',
+  'statuscode' => '401',
+  'startcall' => '',
+  'durationcall' => '',
+  'durationcallanswered' => '',
+  'statuscall' => 'ANSWER',
+  'userdata' => '',
+)  
+[2018-05-02 19:57:57] local.INFO: array (
+  'ID' => '1525291061.0506',
+  'src' => 'anonymous',
+  'dst' => '005217221569361',
+  'api' => 'API 6230f',
+  'statuscall' => 'CANCEL',
+  'userfield' => '',
+  'command' => '',
+  'options' => '',
+  'startcall' => '2018-05-02 21:57:41',
+  'durationcall' => '15',
+  'durationcallanswered' => '',
+  'userdata' => '',
+)  
+*/
