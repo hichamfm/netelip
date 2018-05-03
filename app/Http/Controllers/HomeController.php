@@ -59,9 +59,9 @@ class HomeController extends Controller
 	
 	public function llamadasSalientes(Request $request){
 		//Log::info($_REQUEST);
-		$data=$request->get('call');
+		$data=$request->all();
 		//Log::info("inicio");
-		//Log::info($data);
+		Log::info($data);
 		//Log::info("fin");
 		
 		if ($_POST["userfield"]==""){
