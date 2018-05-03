@@ -63,7 +63,9 @@ class HomeController extends Controller
 		//Log::info("inicio");
 		Log::info($data);
 		//Log::info("fin");
-		
+		$comando="";
+		$option="";
+		$userfield="";
 		if (!isset($data['userfield']) or $data['userfield']=""){
 			$userfield="0";
 		}
