@@ -64,11 +64,11 @@ class HomeController extends Controller
 		Log::info($data);
 		//Log::info("fin");
 		
-		if ($_POST["userfield"]==""){
+		if (!isset($data['userfield']) or $data['userfield']=""){
 			$userfield="0";
 		}
 		else{
-			$userfield=$_POST["userfield"];
+			$userfield=$data['userfield'];
 		}
 		
 		switch($userfield){
