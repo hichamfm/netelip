@@ -66,6 +66,7 @@ class HomeController extends Controller
 		$comando="";
 		$option="";
 		$userfield="";
+		
 		if (!isset($data['userfield']) or $data['userfield']=""){
 			$userfield="0";
 		}
@@ -76,7 +77,7 @@ class HomeController extends Controller
 		switch($userfield){
 			case "0":
 				$comando="dial";
-				$option="extension,100,30,called,20";
+				$option="extension,109,30,called,20";
 				$userfield="3";
 				break;
 			case "3":
